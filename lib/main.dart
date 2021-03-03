@@ -43,24 +43,70 @@ class Home extends StatelessWidget {
               children: [
 
                 Container(
-                    child: TextField(
+                  
+                  
+                  
+                    child: Theme(
 
-                      decoration: InputDecoration(labelText: 'Name'),
-                      onChanged: (text)  {
-                        a = text;
+                      data: new ThemeData(
+                        primaryColor: Colors.redAccent,
+                        primaryColorDark: Colors.red,
+                      ),
 
-                       // geek.geek_name= text;
-                        mclass.name = text;
 
-                      },
+                      child: TextField(
 
+
+
+                        decoration: InputDecoration(hintText: 'Name' ,
+                            hoverColor: Colors.amber,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+
+                            )),
+
+
+                        onChanged: (text)  {
+                          a = text;
+
+                         // geek.geek_name= text;
+                          mclass.name = text;
+
+                        },
+
+                      ),
                     )
                 ),
 
                 Container(
+
+                  margin: EdgeInsets.only(top: 20),
+
+
+
                     child: TextField(
 
-                      decoration: InputDecoration(labelText: 'Phone'),
+
+
+                     // decoration: InputDecoration(hintText: 'Phone',contentPadding: EdgeInsets.only(left: 10)),
+                        decoration: new InputDecoration(
+
+                          enabledBorder:  OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: const BorderSide(color: Colors.lightGreen, width: 2),
+
+
+
+                          ),
+
+                            focusedBorder: OutlineInputBorder(
+                           borderRadius: BorderRadius.circular(10),
+                             borderSide: const BorderSide(color: Colors.pink, width: 2),
+                         )
+                        ),
+
+
+
                       onChanged: (text) {
                         a = text;
 
@@ -74,7 +120,17 @@ class Home extends StatelessWidget {
                 ),
 
                 Container(
-                  child: RaisedButton(
+
+                  margin: EdgeInsets.only(top: 20),
+
+                  decoration: BoxDecoration(
+
+                      color: Colors.blue[100],
+                      border: Border.all(color: Colors.black,width: 1,)
+                      ,borderRadius: BorderRadius.circular(10)
+
+                  ),
+                  child: FlatButton(
                     child: Text('Next >'),
                     onPressed: () {
                       //   a = "hello farhad";
